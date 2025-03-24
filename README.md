@@ -1,7 +1,5 @@
 # **Society Teams**  
 
-https://yt3.googleusercontent.com/0kbQKPrhUpuSM2X-pflmE_neybxDleYzaDwiFZI4Tax9eHauwrYD3FyaMtzCm5qKflxR7opCNQ=s160-c-k-c0x00ffffff-no-rj
-
 **Transformando vidas através da solidariedade.**  
 
 ## 📌 **Sobre o Projeto**  
