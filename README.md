@@ -1,4 +1,4 @@
-# **Society Teams - README**  
+# **Society Teams**  
 
 ![Society Teams Logo](https://via.placeholder.com/150x50/9a4eae/FFFFFF?text=Society+Teams)  
 
@@ -8,7 +8,7 @@
 A **Society Teams** é uma ONG dedicada a promover impacto social positivo por meio de projetos comunitários, voluntariado e ações de inclusão. Nosso objetivo é criar oportunidades em educação, saúde e desenvolvimento sustentável.  
 
 🔗 **Site Oficial**:  https://societyteams.giize.com/
-📧 **Contato**: contato@societyteams.org  
+📧 **Contato**:   
 
 ## 💜 **Como Ajudar?**  
 Você pode contribuir de várias formas:  
