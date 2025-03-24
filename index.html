@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Teams</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eaeaea;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Botão PIX Destaque */
+        .pix-button {
+            display: block;
+            background: linear-gradient(135deg, #32BCAD 0%, #1E8F7A 100%);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin: 30px auto;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(30, 143, 122, 0.4);
+            transition: all 0.3s ease;
+            max-width: 350px;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        .pix-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(30, 143, 122, 0.6);
+        }
+
+        .pix-button i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .pix-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            pointer-events: none;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .pix-button:hover::after {
+            opacity: 1;
+            left: 100%;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease;
+        }
+
+        header h1 {
+            color: #9a4eae;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(154, 78, 174, 0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .bio {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .bio img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid #9a4eae;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .bio img:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .bio p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .links, .social-media {
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            animation: fadeInUp 1s ease;
+        }
+
+        h2 {
+            color: #9a4eae;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #9a4eae;
+            border-radius: 3px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            margin: 15px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #9a4eae;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #eaeaea;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        a:hover {
+            color: #9a4eae;
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(154, 78, 174, 0.1);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #9a4eae;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 16px rgba(154, 78, 174, 0.3);
+        }
+
+        .facebook:hover { color: #1877f2 !important; background: rgba(24, 119, 242, 0.1) !important; }
+        .instagram:hover { color: #e4405f !important; background: rgba(228, 64, 95, 0.1) !important; }
+        .twitter:hover { color: #1da1f2 !important; background: rgba(29, 161, 242, 0.1) !important; }
+        .linkedin:hover { color: #0a66c2 !important; background: rgba(10, 102, 194, 0.1) !important; }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            opacity: 0.7;
+            animation: fadeIn 2s ease;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efeito de partículas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .bio img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .links, .social-media {
+                padding: 20px;
+            }
+            
+            .pix-button {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Efeito de partículas -->
+    <div class="particles" id="particles-js"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Society Teams</h1>
+            <p>Transformando vidas através da solidariedade.</p>
+        </header>
+        
+        <!-- Botão PIX Destacado -->
+        <a href="https://biy.ly/societyteamspix" class="pix-button" target="_blank">
+            <i class="fas fa-qrcode"></i> DOE AGORA VIA PIX
+        </a>
+        
+        <section class="bio">
+            <img src="https://yt3.googleusercontent.com/0kbQKPrhUpuSM2X-pflmE_neybxDleYzaDwiFZI4Tax9eHauwrYD3FyaMtzCm5qKflxR7opCNQ=s160-c-k-c0x00ffffff-no-rj" alt="Voluntários trabalhando juntos">
+            <p>A Society Teams é uma ONG dedicada a ajudar comunidades carentes através de projetos sociais e ações de voluntariado. Nossa missão é criar um impacto positivo na sociedade, promovendo igualdade, educação e oportunidades para todos. Junte-se a nós e faça a diferença!</p>
+        </section>
+
+        <section class="links">
+            <h2>Nossos Projetos</h2>
+            <ul>
+               <li><a href="">Nemnhum Ainda :(</a></li>
+            </ul>
+        </section>
+
+        <section class="social-media">
+            <h2>Conecte-se Conosco</h2>
+            <p>Siga nossas redes sociais para acompanhar nosso trabalho e saber como participar:</p>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/societyteams" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/societyteams" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com/societyteams" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/societyteams" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/societyteams" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Society Teams & Keyzer. Todos os direitos reservados.</p>
+            <p>Nosso lema: "Juntos podemos mais!"</p>
+        </footer>
+    </div>
+
+    <!-- Script para partículas -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Inicialização das partículas
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#9a4eae"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.3,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#9a4eae",
+                        "opacity": 0.2,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
+</body>
+</html>
