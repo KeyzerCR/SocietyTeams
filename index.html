@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Society Teams</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Society Teams - Transformando vidas através da solidariedade. ONG dedicada a ajudar comunidades carentes através de projetos sociais.">
+    <meta name="keywords" content="ONG, solidariedade, projetos sociais, doação, voluntariado">
+    <meta name="author" content="Society Teams">
+    <meta property="og:title" content="Society Teams - Transformando vidas">
+    <meta property="og:description" content="ONG dedicada a ajudar comunidades carentes através de projetos sociais.">
+    <meta property="og:image" content="https://yt3.googleusercontent.com/0kbQKPrhUpuSM2X-pflmE_neybxDleYzaDwiFZI4Tax9eHauwrYD3FyaMtzCm5qKflxR7opCNQ=s160-c-k-c0x00ffffff-no-rj">
+    <meta property="og:url" content="https://societyteams.giize.com">
+    <meta name="theme-color" content="#9a4eae">
+    <title>Society Teams | Transformando vidas através da solidariedade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
+        :root {
+            --primary-color: #9a4eae;
+            --primary-dark: #7d3a8f;
+            --secondary-color: #32BCAD;
+            --secondary-dark: #1E8F7A;
+            --bg-color: #1a1a2e;
+            --bg-gradient: linear-gradient(135deg, var(--bg-color) 0%, #16213e 100%);
+            --text-color: #eaeaea;
+            --text-light: rgba(234, 234, 234, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,41 +40,90 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #eaeaea;
+            background: var(--bg-gradient);
+            color: var(--text-color);
             min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Efeito de partículas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
 
-        /* Botão PIX Destaque */
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 8px rgba(154, 78, 174, 0.3);
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        /* PIX Button */
         .pix-button {
-            display: block;
-            background: linear-gradient(135deg, #32BCAD 0%, #1E8F7A 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
             color: white;
             text-align: center;
-            padding: 18px;
-            margin: 30px auto;
+            padding: 1.1rem 2rem;
             border-radius: 50px;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             font-weight: 600;
             text-decoration: none;
             box-shadow: 0 8px 20px rgba(30, 143, 122, 0.4);
-            transition: all 0.3s ease;
+            transition: var(--transition);
             max-width: 350px;
             position: relative;
             overflow: hidden;
             animation: pulse 2s infinite;
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
 
-        .pix-button:hover {
+        .pix-button:hover, .pix-button:focus {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 12px 25px rgba(30, 143, 122, 0.6);
+            outline: none;
         }
 
         .pix-button i {
@@ -77,43 +150,20 @@
             left: 100%;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            animation: fadeInDown 1s ease;
-        }
-
-        header h1 {
-            color: #9a4eae;
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 0 4px 8px rgba(154, 78, 174, 0.3);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
+        /* Bio Section */
         .bio {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3rem;
             animation: fadeIn 1.5s ease;
         }
 
         .bio img {
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
             width: 200px;
             height: 200px;
             object-fit: cover;
-            border: 5px solid #9a4eae;
+            border: 5px solid var(--primary-color);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             transition: transform 0.5s ease;
         }
@@ -126,23 +176,31 @@
             max-width: 700px;
             margin: 0 auto;
             font-size: 1.1rem;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: var(--text-light);
         }
 
-        .links, .social-media {
-            margin-bottom: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
+        /* Cards */
+        .card {
+            margin-bottom: 2.5rem;
+            background: var(--card-bg);
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--card-shadow);
             backdrop-filter: blur(8px);
             animation: fadeInUp 1s ease;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
-            color: #9a4eae;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
             position: relative;
             display: inline-block;
         }
@@ -154,7 +212,7 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: #9a4eae;
+            background: var(--primary-color);
             border-radius: 3px;
         }
 
@@ -163,7 +221,7 @@
         }
 
         ul li {
-            margin: 15px 0;
+            margin: 1rem 0;
             position: relative;
             padding-left: 30px;
         }
@@ -172,28 +230,30 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #9a4eae;
+            color: var(--primary-color);
             font-weight: bold;
         }
 
         a {
             text-decoration: none;
-            color: #eaeaea;
-            transition: all 0.3s ease;
+            color: var(--text-color);
+            transition: var(--transition);
             display: inline-block;
             font-size: 1.1rem;
         }
 
-        a:hover {
-            color: #9a4eae;
+        a:hover, a:focus {
+            color: var(--primary-color);
             transform: translateX(5px);
+            outline: none;
         }
 
+        /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 20px;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
 
@@ -206,29 +266,83 @@
             justify-content: center;
             background: rgba(154, 78, 174, 0.1);
             font-size: 1.5rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            color: var(--text-color);
         }
 
-        .social-icons a:hover {
-            background: #9a4eae;
+        .social-icons a:hover, .social-icons a:focus {
             transform: translateY(-5px) scale(1.1);
             box-shadow: 0 8px 16px rgba(154, 78, 174, 0.3);
+            outline: none;
         }
 
-        .facebook:hover { color: #1877f2 !important; background: rgba(24, 119, 242, 0.1) !important; }
-        .instagram:hover { color: #e4405f !important; background: rgba(228, 64, 95, 0.1) !important; }
-        .twitter:hover { color: #1da1f2 !important; background: rgba(29, 161, 242, 0.1) !important; }
-        .linkedin:hover { color: #0a66c2 !important; background: rgba(10, 102, 194, 0.1) !important; }
+        .social-icons a.facebook:hover { background: #1877f2; color: white !important; }
+        .social-icons a.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white !important; }
+        .social-icons a.twitter:hover { background: #1da1f2; color: white !important; }
+        .social-icons a.youtube:hover { background: #ff0000; color: white !important; }
 
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            background: rgba(154, 78, 174, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(154, 78, 174, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: rgba(154, 78, 174, 0.2);
+            box-shadow: 0 10px 20px rgba(154, 78, 174, 0.1);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Form Styles */
+        input, textarea {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color) !important;
+        }
+
+        button[type="submit"]:hover {
+            background: var(--primary-dark) !important;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            opacity: 0.7;
+            margin-top: 3rem;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
             animation: fadeIn 2s ease;
+            border-top: 1px solid rgba(154, 78, 174, 0.2);
         }
 
-        /* Animações */
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -256,21 +370,61 @@
             }
         }
 
-        /* Efeito de partículas */
-        .particles {
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
+            background: var(--bg-gradient);
+            z-index: 9999;
+            transition: opacity 0.5s ease;
         }
 
-        /* Responsividade */
+        .loading::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(154, 78, 174, 0.2);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsiveness */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
+            .container {
+                padding: 15px;
             }
             
             .bio img {
@@ -278,13 +432,28 @@
                 height: 150px;
             }
             
-            .links, .social-media {
-                padding: 20px;
+            .card {
+                padding: 1.5rem;
             }
             
-            .pix-button {
-                font-size: 1.1rem;
-                padding: 15px;
+            .social-icons a {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                margin-bottom: 2rem;
+            }
+            
+            .bio p {
+                font-size: 1rem;
+            }
+            
+            ul li {
+                font-size: 1rem;
             }
         }
     </style>
@@ -293,52 +462,96 @@
     <!-- Efeito de partículas -->
     <div class="particles" id="particles-js"></div>
     
+    <!-- Accessibility skip link -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Loading animation -->
+    <div class="loading" id="loading"></div>
+    
+    <!-- Main content -->
     <div class="container">
         <header>
             <h1>Society Teams</h1>
             <p>Transformando vidas através da solidariedade.</p>
         </header>
         
-        <!-- Botão PIX Destacado -->
-        <a href="http://pixgg.com/keyzer" class="pix-button" target="_blank">
-            <i class="fas fa-qrcode"></i> DOE AGORA VIA PIX
-        </a>
-        
-        <section class="bio">
-            <img src="https://yt3.googleusercontent.com/0kbQKPrhUpuSM2X-pflmE_neybxDleYzaDwiFZI4Tax9eHauwrYD3FyaMtzCm5qKflxR7opCNQ=s160-c-k-c0x00ffffff-no-rj" alt="Voluntários trabalhando juntos">
-            <p>A Society Teams é uma ONG dedicada a ajudar comunidades carentes através de projetos sociais e ações de voluntariado. Nossa missão é criar um impacto positivo na sociedade, promovendo igualdade, educação e oportunidades para todos. Junte-se a nós e faça a diferença!</p>
-        </section>
-
-        <section class="links">
-            <h2>Nossos Projetos</h2>
-            <ul>
-               <li><a href="">Nemnhum Ainda :(</a></li>
-            </ul>
-        </section>
-
-        <section class="social-media">
-            <h2>Conecte-se Conosco</h2>
-            <p>Siga nossas redes sociais para acompanhar nosso trabalho e saber como participar:</p>
-            
-            <div class="social-icons">
-                <a href="https://www.facebook.com/societyteams" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/societyteams" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com/societyteams" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.youtube.com/@SocietyTeams" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        <main id="main-content">
+            <!-- PIX Button -->
+            <div class="button-container">
+                <a href="http://pixgg.com/keyzer" class="pix-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-qrcode" aria-hidden="true"></i> DOE AGORA VIA PIX
+                </a>
             </div>
-        </section>
+            
+            <!-- Bio Section -->
+            <section class="bio">
+                <img src="https://yt3.googleusercontent.com/0kbQKPrhUpuSM2X-pflmE_neybxDleYzaDwiFZI4Tax9eHauwrYD3FyaMtzCm5qKflxR7opCNQ=s160-c-k-c0x00ffffff-no-rj" alt="Voluntários da Society Teams trabalhando juntos" loading="lazy">
+                <p>A Society Teams é uma ONG dedicada a ajudar comunidades carentes através de projetos sociais e ações de voluntariado. Nossa missão é criar um impacto positivo na sociedade, promovendo igualdade, educação e oportunidades para todos. Junte-se a nós e faça a diferença!</p>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="card">
+                <h2>Nossos Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Educação para Todos</h3>
+                        <p>Programa de alfabetização e reforço escolar para crianças em comunidades carentes.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Alimentando Esperanças</h3>
+                        <p>Distribuição de cestas básicas e refeições nutritivas para famílias necessitadas.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Profissionalizando Sonhos</h3>
+                        <p>Cursos profissionalizantes gratuitos para jovens e adultos em situação de vulnerabilidade.</p>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; text-align: center; font-style: italic;">Temos muito mais projetos em desenvolvimento!</p>
+            </section>
+
+            <!-- Social Media Section -->
+            <section class="card social-media">
+                <h2>Conecte-se Conosco</h2>
+                <p>Siga nossas redes sociais para acompanhar nosso trabalho e saber como participar:</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/societyteams" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/societyteams" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.twitter.com/societyteams" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@SocietyTeams" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </section>
 
         <footer>
             <p>&copy; 2025 Society Teams & Keyzer. Todos os direitos reservados.</p>
             <p>Nosso lema: "Juntos podemos mais!"</p>
+            <p style="margin-top: 1rem;">
+                <a href="societyteams.giize.com" style="color: var(--primary-color);">Política de Privacidade</a> | 
+                <a href="societyteams.giize.com" style="color: var(--primary-color);">Termos de Uso</a>
+            </p>
         </footer>
     </div>
 
     <!-- Script para partículas -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Inicialização das partículas
-        document.addEventListener('DOMContentLoaded', function() {
+        // Remove loading animation when page is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                setTimeout(() => loading.remove(), 500);
+            }, 800);
+            
+            // Inicialização das partículas
             particlesJS('particles-js', {
                 "particles": {
                     "number": {
@@ -445,6 +658,17 @@
                 "retina_detect": true
             });
         });
+
+        // Service worker registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful');
+                }).catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
     </script>
 </body>
 </html>
